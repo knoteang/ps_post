@@ -38,13 +38,14 @@ module.exports = (app) => {
             successRedirect: '/home'
       }));
 
-      app.get('/oauth/instagram', passport.authenticate('instagram', {
-            scope: ['public_content', 'basic'],
+      app.get('/oauth/twitter', passport.authenticate('twitter', {
+            scope: ['https://api.twitter.com/1.1/account/verify_credentials.json'],
             failureRedirect: '/login'
       }));
 
-      app.get('/oauth/instagram/callback', passport.authenticate('instagram', {
+      app.get('/oauth/twitter/callback', passport.authenticate('twitter', {
             failureRedirect: '/login',
             successRedirect: '/home'
       }));
+
 }

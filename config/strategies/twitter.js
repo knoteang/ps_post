@@ -1,13 +1,13 @@
 import passport from 'passport';
-var InstagramStrategy = require('passport-instagram').Strategy;
+var TwitterStrategy = require('passport-twitter-oauth').OAuth2Strategy;
 import config from '../config.js';
 import user from '../../app/controllers/user.controller';
 
 module.exports = () => {
-  passport.use(new InstagramStrategy({
-    clientID: config.instagram.clientID,
-    clientSecret: config.instagram.clientSecret,
-    callbackURL: config.instagram.callbackURL,
+  passport.use(new TwitterStrategy({
+    clientID: config.twitter.clientID,
+    clientSecret: config.twitter.clientSecret,
+    callbackURL: config.twitter.callbackURL,
     passReqToCallback: true
   }, function (req, accessToken, refreshToken, profile, done) {
     var providerData = profile._json;
@@ -16,9 +16,9 @@ module.exports = () => {
     var providerUserProfile = {
       firstName: profile.name.givenName,
       lastName: profile.name.familyName,
-      email: profile.emails,
+      email: profile.emails[0].value,
       username: profile.displayName,
-      provider: 'instagram',
+      provider: 'twitter',
       providerId: profile.id,
       providerData: providerData
     }
