@@ -14,9 +14,9 @@ module.exports = () => {
     providerData.accessToken = accessToken;
     providerData.refreshToken = refreshToken;
     var providerUserProfile = {
-      firstName: profile.name.givenName,
-      lastName: profile.name.familyName,
-      email: profile.emails[0].value,
+      firstName: profile.name.substr(0, profile.name.indexOf(' ')),
+      lastName: profile.name.substr(profile.name.indexOf(' ') + 1),
+      email: profile.emails,
       username: profile.displayName,
       provider: 'twitter',
       providerId: profile.id,
