@@ -13,10 +13,6 @@ exports.index = (req, res) => {
     res.sendFile((path.join(__dirname + '/../views/index.html')));
 }
 
-exports.facebook = (req, res) => {
-    res.sendFile((path.join(__dirname + '/../views/facebook.html')));
-}
-
 exports.home = (req, res) => {
     if (req.user) {
         res.render((path.join(__dirname + '/../views/home.html')), { username: req.user.username });
