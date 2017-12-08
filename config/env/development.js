@@ -15,8 +15,8 @@ module.exports = {
     callbackURL: 'https://pspost.herokuapp.com/oauth/facebook/callback'
   },
   twitter: {
-    clientID: 'HVnSPQRfPwhvsC5Hu6DmY7c3J',
-    clientSecret: 'wtCiw7putLHr2xty61AOJKZsofoXLxivOL4dbGtOqOk05RgnR1',
+    consumerKey: 'HVnSPQRfPwhvsC5Hu6DmY7c3J',
+    consumerSecret: 'wtCiw7putLHr2xty61AOJKZsofoXLxivOL4dbGtOqOk05RgnR1',
     callbackURL: 'https://pspost.herokuapp.com/oauth/twitter/callback'
   }
 }

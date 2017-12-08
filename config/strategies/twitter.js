@@ -1,12 +1,12 @@
 import passport from 'passport';
-var TwitterStrategy = require('passport-twitter-oauth').OAuth2Strategy;
+var TwitterStrategy = require('passport-twitter').Strategy;
 import config from '../config.js';
 import user from '../../app/controllers/user.controller';
 
 module.exports = () => {
   passport.use(new TwitterStrategy({
-    clientID: config.twitter.clientID,
-    clientSecret: config.twitter.clientSecret,
+    consumerKey: config.twitter.consumerKey,
+    consumerSecret: config.twitter.consumerSecret,
     callbackURL: config.twitter.callbackURL,
     passReqToCallback: true
   }, function (req, accessToken, refreshToken, profile, done) {
