@@ -13,10 +13,12 @@ module.exports = () => {
     var providerData = profile._json;
     providerData.accessToken = accessToken;
     providerData.refreshToken = refreshToken;
+    var firstNameP = profile.name.substr(0, profile.name.indexOf(' '))
+    var lastNameP = profile.name.substr(profile.name.indexOf(' ') + 1)
     var providerUserProfile = {
-      firstName: profile.name.substr(0, profile.name.indexOf(' ')),
-      lastName: profile.name.substr(profile.name.indexOf(' ') + 1),
-      email: profile.emails,
+      firstName: firstNameP,
+      lastName: lastNameP,
+      email: profile.email,
       username: profile.displayName,
       provider: 'twitter',
       providerId: profile.id,
