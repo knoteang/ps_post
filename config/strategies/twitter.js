@@ -13,8 +13,8 @@ module.exports = () => {
     var providerData = profile._json;
     providerData.accessToken = accessToken;
     providerData.refreshToken = refreshToken;
-    var firstNameP = profile.name.substr(0, profile.name.indexOf(' '))
-    var lastNameP = profile.name.substr(profile.name.indexOf(' ') + 1)
+    var firstNameP = profile.name
+    var lastNameP = profile.name
     firstNameP = firstNameP.substr(0, firstNameP.indexOf(' '))
     lastNameP = lastNameP.substr(lastNameP.indexOf(' ') + 1)
     var providerUserProfile = {
