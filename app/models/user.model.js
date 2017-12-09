@@ -120,23 +120,23 @@ UserSchema.pre('save', function (next) {
             this.salt = new Buffer(crypto.randomBytes(16).toString('base64'), 'base64');
             this.password = this.hashPassword(this.password);
       }
-      if (!this.username) {
-            this.username = "-";
-      }
-      if (!this.email) {
-            this.email = "-";
-      }
-      if (!this.firstName) {
-            this.firstName = "-";
-      }
-      if (!this.lastName) {
-            this.lastName = "-";
-      }
       if (!this.gender) {
             this.gender = "-";
       }
       if (!this.phone) {
             this.phone = "-";
+      }
+      if (!this.email) {
+            this.email = "-";
+      }
+      if (!this.lastName) {
+            this.lastName = "-";
+      }
+      if (!this.firstName) {
+            this.firstName = "-";
+      }
+      if (!this.username) {
+            this.username = "-";
       }
       next();
 });
