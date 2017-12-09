@@ -108,22 +108,22 @@ UserSchema.pre('save', function (next) {
             this.salt = new Buffer(crypto.randomBytes(16).toString('base64'), 'base64');
             this.password = this.hashPassword(this.password);
       }
-      if (this.username == "") {
+      if (!this.username) {
             this.username = "-";
       }
-      if (this.email == "") {
+      if (!this.email) {
             this.email = "-";
       }
-      if (this.firstName == "") {
+      if (!this.firstName) {
             this.firstName = "-";
       }
-      if (this.lastName == "") {
+      if (!this.lastName) {
             this.lastName = "-";
       }
-      if (this.gender == "") {
+      if (!this.gender) {
             this.gender = "-";
       }
-      if (this.phone == "") {
+      if (!this.phone) {
             this.phone = "-";
       }
       next();
