@@ -8,7 +8,6 @@ module.exports = () => {
     clientID: config.instagram.clientID,
     clientSecret: config.instagram.clientSecret,
     callbackURL: config.instagram.callbackURL,
-    profileFields: ['emails', 'name', 'displayName'],
     passReqToCallback: true
   }, function (req, accessToken, refreshToken, profile, done) {
     var providerData = profile._json;
@@ -17,7 +16,7 @@ module.exports = () => {
     var providerUserProfile = {
       firstName: profile.name.givenName,
       lastName: profile.name.familyName,
-      email: profile.email.value,
+      email: profile.emails,
       username: profile.displayName,
       provider: 'instagram',
       providerId: profile.id,
