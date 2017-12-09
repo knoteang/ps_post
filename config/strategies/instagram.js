@@ -18,7 +18,7 @@ module.exports = () => {
       firstName: profile.name.givenName,
       lastName: profile.name.familyName,
       email: profile.emails,
-      username: providerData.username,
+      username: profile.displayName,
       provider: 'instagram',
       providerId: profile.id,
       providerData: providerData
