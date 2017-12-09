@@ -79,6 +79,9 @@ var Schema = mongoose.Schema;
 var UserSchema = new Schema({
       firstName: String,
       lastName: String,
+      gender: String,
+      phone: String,
+      status: String,
       username: {
             type: String,
             unique: true,
@@ -96,10 +99,19 @@ var UserSchema = new Schema({
             type: String,
             unique: true
       },
-
-      gender: String,
-      phone: Number,
-      status: String
+      providerId: String,
+      providerData: {},
+      created: {
+            type: Date,
+            default: Date.now
+      },
+      salt: {
+            type: String
+      },
+      provider: {
+            type: String,
+            default: 'local'
+      }
 });
 
 
