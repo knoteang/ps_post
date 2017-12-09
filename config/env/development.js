@@ -14,6 +14,11 @@ module.exports = {
     clientSecret: 'f72838ff6b2abd2368b1293331f0c002',
     callbackURL: 'https://pspost.herokuapp.com/oauth/facebook/callback'
   },
+  instagram: {
+    clientID: '7a7b866454cd4bc08972a2f66358452a',
+    clientSecret: '1df597291b11468cb6133db7152a29f1',
+    callbackURL: 'https://pspost.herokuapp.com/oauth/instagram/callback'
+  },
   twitter: {
     consumerKey: 'HVnSPQRfPwhvsC5Hu6DmY7c3J',
     consumerSecret: 'wtCiw7putLHr2xty61AOJKZsofoXLxivOL4dbGtOqOk05RgnR1',

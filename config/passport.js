@@ -19,4 +19,5 @@ module.exports = () => {
   require('./strategies/google')();
   require('./strategies/facebook')();
   require('./strategies/twitter')();
+  require('./strategies/instagram')();
 }
