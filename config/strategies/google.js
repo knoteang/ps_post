@@ -18,6 +18,7 @@ module.exports = () => {
                         lastName: profile.name.familyName,
                         email: profile.emails[0].value,
                         username: profile.displayName,
+                        gender: profile.gender,
                         provider: 'google',
                         providerId: profile.id,
                         providerData: providerData

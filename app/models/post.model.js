@@ -19,7 +19,8 @@ var PostSchema = new Schema({
             type: Date,
             default: Date.now
       },
-      like: Number
+      like: Number,
+      id: Number
 });
 
 mongoose.model('Post', PostSchema);
