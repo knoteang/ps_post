@@ -48,10 +48,8 @@ exports.saveOAuthUserProfile = (req, profile, done) => {
         provider: profile.provider,
         providerId: profile.providerId
     }, function (err, user) {
-        console.log(err + "1234567")
         if (err) return done(err);
         else {
-            console.log(user + "1234567")
             if (!user) {
                 var possibleUsername = profile.username
                     || (profile.email ? profile.email.split('@')[0] : '');
@@ -60,6 +58,7 @@ exports.saveOAuthUserProfile = (req, profile, done) => {
                     profile.username = availableUsername;
                     user = new User(profile);
                     user.save((err) => {
+                        console.log(err + "1234567")
                         if (err) { return req.res.redirect('/login'); }
                         return done(err, user);
                     })
