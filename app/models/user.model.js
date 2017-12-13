@@ -77,11 +77,26 @@ import crypto from 'crypto';
 var Schema = mongoose.Schema;
 
 var UserSchema = new Schema({
-      firstName: String,
-      lastName: String,
-      gender: String,
-      phone: String,
-      status: String,
+      firstName: {
+            type: String,
+            default: '-'
+      },
+      lastName: {
+            type: String,
+            default: '-'
+      },
+      gender: {
+            type: String,
+            default: '-'
+      },
+      phone: {
+            type: String,
+            default: '-'
+      },
+      status: {
+            type: String,
+            default: 'user'
+      },
       username: {
             type: String,
             unique: true,
@@ -95,7 +110,10 @@ var UserSchema = new Schema({
                   'Password cannot be empty'
             ]
       },
-      email: String,
+      email: {
+            type: String,
+            default: '-'
+      },
       providerId: String,
       providerData: {},
       created: {
@@ -116,24 +134,6 @@ UserSchema.pre('save', function (next) {
       if (this.password) {
             this.salt = new Buffer(crypto.randomBytes(16).toString('base64'), 'base64');
             this.password = this.hashPassword(this.password);
-      }
-      if (!this.gender) {
-            this.gender = "-";
-      }
-      if (!this.phone) {
-            this.phone = "-";
-      }
-      if (!this.email) {
-            this.email = "-";
-      }
-      if (!this.lastName) {
-            this.lastName = "-";
-      }
-      if (!this.firstName) {
-            this.firstName = "-";
-      }
-      if (!this.username) {
-            this.username = "-";
       }
       next();
 });
