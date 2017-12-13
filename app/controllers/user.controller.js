@@ -56,6 +56,7 @@ exports.saveOAuthUserProfile = (req, profile, done) => {
                 console.log('NAME: ' + profile.username);
                 User.findUniqueUsername(possibleUsername, null, (availableUsername) => {
                     profile.username = availableUsername;
+                    console.log(profile.username + "12345676655")
                     user = new User(profile);
                     console.log(user + "123456766")
                     user.save((err) => {
