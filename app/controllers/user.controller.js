@@ -61,6 +61,7 @@ exports.saveOAuthUserProfile = (req, profile, done) => {
                         console.log(err + "1234567")
                         if (err) { return req.res.redirect('/login'); }
                         return done(err, user);
+                        console.log(err + "1234567888")
                     })
                 });
             }
