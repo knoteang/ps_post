@@ -96,8 +96,7 @@ var UserSchema = new Schema({
             ]
       },
       email: {
-            type: String,
-            unique: true
+            type: String
       },
       providerId: String,
       providerData: {},
@@ -162,6 +161,7 @@ UserSchema.statics.findUniqueUsername = function (username, suffix, callback) {
                   }
             }
             else {
+                  console.log(err + "1111111")
                   callback(null);
             }
       });
