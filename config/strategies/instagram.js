@@ -23,7 +23,6 @@ module.exports = () => {
       providerId: profile.id,
       providerData: providerData
     }
-    console.log("123456789")
     user.saveOAuthUserProfile(req, providerUserProfile, done);
   }));
 }
