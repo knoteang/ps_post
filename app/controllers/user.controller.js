@@ -57,7 +57,7 @@ exports.saveOAuthUserProfile = (req, profile, done) => {
                 User.findUniqueUsername(possibleUsername, null, (availableUsername) => {
                     profile.username = availableUsername;
                     user = new User(profile);
-                    console.log(user + "1234567")
+                    console.log(user + "123456766")
                     user.save((err) => {
                         console.log(err + "1234567")
                         if (err) { return req.res.redirect('/login'); }
