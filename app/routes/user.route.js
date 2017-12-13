@@ -9,11 +9,7 @@ module.exports = (app) => {
 
       app.route('/login')
             .get(user.login)
-            .post(passport.authenticate('local', {
-                  successRedirect: '/home',
-                  failureRedirect: '/login',
-                  failureFlash: true
-            }));
+            .post(passport.authenticate('local'));
 
       app.post('/logout', user.logout);
 
