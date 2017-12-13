@@ -24,7 +24,7 @@ module.exports = (app) => {
 
       app.get('/oauth/google/callback', passport.authenticate('google', {
             failureRedirect: '/login',
-            successRedirect: '/home'
+            successRedirect: '/'
       }));
 
       app.get('/oauth/facebook', passport.authenticate('facebook', {
@@ -34,7 +34,7 @@ module.exports = (app) => {
 
       app.get('/oauth/facebook/callback', passport.authenticate('facebook', {
             failureRedirect: '/login',
-            successRedirect: '/home'
+            successRedirect: '/'
       }));
 
       app.get('/oauth/instagram', passport.authenticate('instagram', {
@@ -44,7 +44,7 @@ module.exports = (app) => {
 
       app.get('/oauth/instagram/callback', passport.authenticate('instagram', {
             failureRedirect: '/login',
-            successRedirect: '/home'
+            successRedirect: '/'
       }));
 
       app.get('/oauth/twitter', passport.authenticate('twitter', {
@@ -54,7 +54,7 @@ module.exports = (app) => {
 
       app.get('/oauth/twitter/callback', passport.authenticate('twitter', {
             failureRedirect: '/login',
-            successRedirect: '/home'
+            successRedirect: '/'
       }));
 
 }
