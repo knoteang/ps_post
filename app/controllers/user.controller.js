@@ -63,7 +63,10 @@ exports.saveOAuthUserProfile = (req, profile, done) => {
                     })
                 });
             }
-            else { return done(err, user); }
+            else {
+                alert("555555")
+                return done(err, user);
+            }
         }
     });
 }
