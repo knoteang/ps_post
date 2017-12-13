@@ -95,9 +95,7 @@ var UserSchema = new Schema({
                   'Password cannot be empty'
             ]
       },
-      email: {
-            type: String
-      },
+      email: String,
       providerId: String,
       providerData: {},
       created: {
