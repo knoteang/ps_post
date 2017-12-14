@@ -63,7 +63,7 @@ exports.getMyPost = (req, res, next) => {
 exports.create = (req, res, next) => {
       if (req.user) {
             var post = new Post(req.body);
-            post.author = req.user.username;
+            //post.author = req.user.username;
             post.save(function (err) {
                   if (err) {
                         res.status(400).send({
