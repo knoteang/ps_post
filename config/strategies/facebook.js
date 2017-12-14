@@ -4,7 +4,7 @@ import config from '../config.js';
 import user from '../../app/controllers/user.controller';
 
 module.exports = () => {
-  console.log("ssssssssssssssss")
+
   passport.use(new FacebookStrategy({
     clientID: config.facebook.clientID,
     clientSecret: config.facebook.clientSecret,
@@ -24,6 +24,7 @@ module.exports = () => {
       providerId: profile.id,
       providerData: providerData
     }
+    console.log(passport.use + "12345678")
     user.saveOAuthUserProfile(req, providerUserProfile, done);
   }));
 }
