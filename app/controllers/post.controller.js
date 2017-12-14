@@ -61,26 +61,18 @@ exports.getMyPost = (req, res, next) => {
       }
 }
 exports.create = (req, res, next) => {
-      console.log(req.user)
-      if (req.user) {
-            var post = new Post(req.body);
-            //post.author = req.user.username;
-            post.save(function (err) {
-                  if (err) {
-                        res.status(400).send({
-                              message: err
-                        });
-                  }
-                  else {
-                        res.json(post);
-                  }
-            });
-      }
-      else {
-            res.status(400).send({
-                  message: 'User is not signed in'
-            });
-      }
+      var post = new Post(req.body);
+      //post.author = req.user.username;
+      post.save(function (err) {
+            if (err) {
+                  res.status(400).send({
+                        message: err
+                  });
+            }
+            else {
+                  res.json(post);
+            }
+      });
 }
 exports.edit = (req, res, next) => {
       if (req.user) {
