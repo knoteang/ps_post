@@ -14,7 +14,9 @@ var PostSchema = new Schema({
             type: Date,
             default: Date.now
       },
-      like: Number
+      type: String,
+      reference: String
+
 });
 
 mongoose.model('Post', PostSchema);
