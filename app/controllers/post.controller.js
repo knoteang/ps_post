@@ -61,7 +61,7 @@ exports.getMyPost = (req, res, next) => {
       }
 }
 exports.create = (req, res, next) => {
-      console.log(user)
+      console.log(req.user)
       if (req.user) {
             var post = new Post(req.body);
             //post.author = req.user.username;
