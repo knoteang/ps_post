@@ -82,6 +82,7 @@ exports.create = (req, res, next) => {
       }
 }
 exports.edit = (req, res, next) => {
+      console.log(user)
       if (req.user) {
             findOneAndUpdate({
                   username: req.body.username
