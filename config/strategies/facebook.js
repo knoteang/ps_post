@@ -4,6 +4,7 @@ import config from '../config.js';
 import user from '../../app/controllers/user.controller';
 
 module.exports = () => {
+  console.log("ssssssssssssssss")
   passport.use(new FacebookStrategy({
     clientID: config.facebook.clientID,
     clientSecret: config.facebook.clientSecret,
