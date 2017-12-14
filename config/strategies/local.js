@@ -10,6 +10,7 @@ module.exports = () => {
       if (!user || user.provider != 'local' || !user.authenticate(password)) {
         return done('Invalid username or password');
       }
+      console.log(user)
       return done(user);
     });
   }));
