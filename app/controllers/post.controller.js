@@ -61,6 +61,7 @@ exports.getMyPost = (req, res, next) => {
       }
 }
 exports.create = (req, res, next) => {
+      console.log(user)
       if (req.user) {
             var post = new Post(req.body);
             //post.author = req.user.username;
@@ -82,7 +83,6 @@ exports.create = (req, res, next) => {
       }
 }
 exports.edit = (req, res, next) => {
-      console.log(user)
       if (req.user) {
             findOneAndUpdate({
                   username: req.body.username
