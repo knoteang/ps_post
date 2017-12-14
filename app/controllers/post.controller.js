@@ -2,23 +2,16 @@ var Post = require('mongoose').model('Post');
 var path = require("path");
 
 exports.getAll = (req, res, next) => {
-      if (req.user) {
-            Post.find((err, data) => {
-                  if (err) {
-                        console.log('Failure: ' + err);
-                        return next(err);
-                  }
-                  else {
-                        console.log(data);
-                        res.json(data);
-                  }
-            });
-      }
-      else {
-            res.status(400).send({
-                  message: 'User is not signed in'
-            });
-      }
+      Post.find((err, data) => {
+            if (err) {
+                  console.log('Failure: ' + err);
+                  return next(err);
+            }
+            else {
+                  console.log(data);
+                  res.json(data);
+            }
+      });
 }
 exports.getOne = (req, res, next) => {
       if (req.user) {
