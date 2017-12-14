@@ -9,8 +9,9 @@ module.exports = () => {
       if (err) { return done(err); }
       if (!user || user.provider != 'local' || !user.authenticate(password)) {
         return done('Invalid username or password');
+      } else {
+        return done(null, user);
       }
-      return done(null, user);
     });
   }));
 }

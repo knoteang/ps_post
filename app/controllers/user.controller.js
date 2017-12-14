@@ -14,6 +14,21 @@ exports.getUsers = (req, res, next) => {
     });
 }
 
+exports.getUserOne = (req, res, next) => {
+    User.findOne({
+        username: req.body.username
+    }, function (err, user) {
+        if (user) {
+            console.log('Success');
+            res.json(user);
+        }
+        else {
+            console.log('Failure');
+            return next(err);
+        }
+    });
+}
+
 exports.create = (req, res, next) => {
     var user = new User(req.body);
     user.save((err) => {
