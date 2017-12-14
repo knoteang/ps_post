@@ -2,11 +2,6 @@ import mongoose from 'mongoose';
 var Schema = mongoose.Schema;
 
 var PostSchema = new Schema({
-      title: {
-            type: String,
-            required: true,
-            trim: true
-      },
       content: {
             type: String
       },
