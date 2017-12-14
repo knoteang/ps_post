@@ -74,7 +74,7 @@ exports.logout = (req, res) => {
     res.redirect('/');
 }
 
-exports.saveOAuthUserProfile = (req, profile, done, res) => {
+exports.saveOAuthUserProfile = (req, profile, done) => {
     User.findOne({
         provider: profile.provider,
         providerId: profile.providerId
@@ -91,14 +91,12 @@ exports.saveOAuthUserProfile = (req, profile, done, res) => {
                     user.save((err) => {
                         if (err) { return req.res.redirect('/login'); }
                         else {
-                            res.json(user)
                             return done(err, user);
                         }
                     })
                 });
             }
             else {
-                res.json(user)
                 return done(err, user);
             }
         }
