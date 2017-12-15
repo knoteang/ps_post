@@ -26,8 +26,7 @@ exports.getOne = (req, res, next) => {
       });
 }
 exports.getMyPost = (req, res, next) => {
-
-      Post.find({ author: req.body.username, type: "topic" }, (err, data) => {
+      Post.find({ author: req.params.username, type: "topic" }, (err, data) => {
             if (err) {
                   console.log('Failure: ' + err);
                   return next(err);
