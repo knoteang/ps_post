@@ -52,7 +52,7 @@ exports.create = (req, res, next) => {
       });
 }
 exports.delete = (req, res, next) => {
-      findOneAndRemove({
+      Post.findOneAndRemove({
             _id: req.params.id
       }, req.body, function (err, user) {
             if (err) {
