@@ -81,3 +81,16 @@ exports.getcomment = (req, res, next) => {
 
 
 }
+
+exports.search = (req, res, next) => {
+      Post.find({ username: req.params.search }, (err, data) => {
+            if (err) {
+                  console.log('Failure: ' + err);
+                  return next(err);
+            }
+            else {
+                  console.log(data);
+                  res.json(data);
+            }
+      }).sort({ time: 'desc' });
+}
