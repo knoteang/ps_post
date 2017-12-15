@@ -69,7 +69,7 @@ exports.delete = (req, res, next) => {
 }
 
 exports.getcomment = (req, res, next) => {
-      Post.find({ type: "comment", reference: req.body.ref }, (err, data) => {
+      Post.find({ type: "comment", _id: req.body.ref }, (err, data) => {
             if (err) {
                   console.log('Failure: ' + err);
                   return next(err);
