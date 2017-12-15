@@ -97,7 +97,6 @@ exports.saveOAuthUserProfile = (req, profile, done) => {
                 });
             }
             else {
-                console.log("123456ssssspppppp")
                 return done(err, user);
             }
         }
