@@ -16,7 +16,7 @@ exports.getUsers = (req, res, next) => {
 
 exports.getUserOne = (req, res, next) => {
     User.findOne({
-        _id: req.params.username
+        username: req.params.username
     }, function (err, user) {
         if (user) {
             console.log('Success');
