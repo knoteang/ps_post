@@ -30,7 +30,7 @@ exports.getUserOne = (req, res, next) => {
 }
 
 exports.deleteUser = (req, res, next) => {
-    user.findByIdAndRemove({ _id: req.params.id }, req.body, (err, post) => {
+    user.findOneAndRemove({ _id: req.params.id }, req.body, (err, post) => {
         if (err) {
             return next(err);
         } else {
