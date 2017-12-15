@@ -83,7 +83,7 @@ exports.getcomment = (req, res, next) => {
 }
 
 exports.search = (req, res, next) => {
-      Post.find({ username: { $regex: req.params.search } }, (err, data) => {
+      Post.find({ author: { $regex: req.params.search } }, (err, data) => {
             if (err) {
                   console.log('Failure: ' + err);
                   return next(err);
