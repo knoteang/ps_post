@@ -60,7 +60,7 @@ exports.delete = (req, res, next) => {
                   return next(err);
             }
             else {
-                  console.log(seccess);
+                  console.log("seccess");
             }
       });
 }
