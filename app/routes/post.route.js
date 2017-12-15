@@ -9,5 +9,5 @@ module.exports = (app) => {
   app.get(path + '/getcomment/:ref', post.getcomment);
   app.get(path + '/search/:search', post.search);
   app.post(path + '/create', post.create);
-  app.post(path + '/delete', post.delete);
+  app.get(path + '/delete/:id', post.delete);
 }

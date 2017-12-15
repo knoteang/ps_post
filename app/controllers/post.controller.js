@@ -52,17 +52,15 @@ exports.create = (req, res, next) => {
       });
 }
 exports.delete = (req, res, next) => {
-
-      findOneAndUpdate({
-            username: req.body.username
+      findOneAndRemove({
+            _id: req.params.id
       }, req.body, function (err, user) {
             if (err) {
                   console.log('Failure: ' + err);
                   return next(err);
             }
             else {
-                  console.log(data);
-                  res.json(data);
+                  console.log(seccess);
             }
       });
 }
