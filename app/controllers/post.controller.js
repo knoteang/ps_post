@@ -14,7 +14,7 @@ exports.getpost = (req, res, next) => {
       }).sort({ time: 'desc' });
 }
 exports.getOne = (req, res, next) => {
-      Post.findOne({ _id: req.body.id }, (err, data) => {
+      Post.findOne({ _id: req.params.id }, (err, data) => {
             if (err) {
                   console.log('Failure: ' + err);
                   return next(err);
