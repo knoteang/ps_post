@@ -7,6 +7,7 @@ module.exports = (app) => {
       app.get(path + '/getuser', user.getUsers);
       app.post(path + '/signup', user.create); //match กับ requestที่เข้ามา
       app.post(path + '/edit', user.edit);
+      app.post(path + '/delete/:id', user.deleteUser);
       app.post(path + '/getUserOne', user.getUserOne)
 
       app.route('/login')
